@@ -27,22 +27,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * This method is called when the increase button is clicked.
+     */
     public void increment(View view){
         quantity = quantity + 1;
         display(quantity);
     }
 
+    /**
+     * This method is called when the decrease button is clicked.
+     */
     public void decrement(View view){
         quantity = quantity - 1;
         display(quantity);
-    }
-
-    /**
-     * This method is called when the order button is clicked.
-     */
-    public void submitOrder(View view) {
-        String priceMessage = "Price $" + (quantity * 5);
-        displayMessage(priceMessage);
     }
 
     /**
@@ -51,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
     private void display(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
+    }
+
+    /**
+     * This method is called when the order button is clicked.
+     */
+    public void submitOrder(View view) {
+        String priceMessage = "Price $" + (quantity * 5);
+        displayMessage(priceMessage);
     }
 
     /**
